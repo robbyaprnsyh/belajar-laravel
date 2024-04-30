@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Post;
+use App\Models\Barang;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,4 +76,17 @@ Route::get('biodata/{nama}/{bb}/{tb}', function ($nama, $bb, $tb) {
 //route optional parameter -> di tandai dengan ?
 Route::get('myname/{nama?}', function ($nama = "Abdu") {
     return "my name is $nama";
+});
+
+
+//menampilkan data dari database
+Route::get('/testmodel', function () {
+    $data = Post::all();
+    return $data;
+});
+
+//menampilkan data dari database
+Route::get('/testbarang', function () {
+    $data = Barang::all();
+    return $data;
 });
