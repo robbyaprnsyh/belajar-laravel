@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Barang;
+use App\Models\Siswa;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,13 +82,50 @@ Route::get('myname/{nama?}', function ($nama = "Abdu") {
 
 
 //menampilkan data dari database
-Route::get('/testmodel', function () {
+Route::get('/testpost', function () {
     $data = Post::all();
-    return $data;
+
+    return view('tampil_post', compact('data'));
+    // return $data;
 });
 
 //menampilkan data dari database
 Route::get('/testbarang', function () {
     $data = Barang::all();
-    return $data;
+
+    return view('tampil_barang', compact('data'));
+    // return $barang;
+});
+
+//menampilkan data dari database
+Route::get('/siswa', function () {
+    // // menampilkan semua data
+    $data = Siswa::all();
+
+    // // menampilkan berdasarkan id
+    // $data = Siswa::find(6);
+
+    // // menampilkan berdasarkan jenis kelamin
+    // $data = Siswa::where('jenis_kelamin', 'like', '%perempuan%')->get();
+
+    // // mengubah data
+    // $data = Siswa::find(9);
+    // $data->nama = "Entin";
+    // $data->jenis_kelamin = "Perempuan";
+    // $data->alamat = "Cibaduyut";
+    // $data->email = "entin@gmail.com";
+    // $data->save();
+
+    // // menambahkan data
+    // $data = new Siswa;
+    // $data->nama = "Titin";
+    // $data->jenis_kelamin = "Perempuan";
+    // $data->alamat = "Cibaduyut";
+    // $data->agama = "Buddha";
+    // $data->telepon = "0812345687";
+    // $data->email = "titin@gmail.com";
+    // $data->save();
+
+    return view('tampil_siswa', compact('data'));
+    // return $data;
 });
