@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Barang;
 use App\Models\Siswa;
+use App\Models\Pengguna;
+use App\Models\Telepon;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,3 +131,20 @@ Route::get('/siswa', function () {
     return view('tampil_siswa', compact('data'));
     // return $data;
 });
+
+//menampilkan data dari database
+Route::get('/pengguna', function () {
+    $data = Pengguna::all();
+
+    return view('tampil_pengguna', compact('data'));
+    // return $barang;
+});
+
+//menampilkan data dari database
+Route::get('/telepon', function () {
+    $data = Telepon::all();
+
+    return view('tampil_telepon', compact('data'));
+    // return $barang;
+});
+
