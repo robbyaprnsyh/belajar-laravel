@@ -6,6 +6,8 @@ use App\Models\Barang;
 use App\Models\Siswa;
 use App\Models\Pengguna;
 use App\Models\Telepon;
+use App\Models\Merek;
+use App\Models\Produk;
 
 /*
 |--------------------------------------------------------------------------
@@ -147,4 +149,21 @@ Route::get('/telepon', function () {
     return view('tampil_telepon', compact('data'));
     // return $barang;
 });
+
+//menampilkan data dari database
+Route::get('/merek', function () {
+    $data = Merek::all();
+
+    return view('tampil_merek', compact('data'));
+    // return $barang;
+});
+
+//menampilkan data dari database
+Route::get('/produk', function () {
+    $data = Produk::all();
+
+    return view('tampil_produk', compact('data'));
+    // return $barang;
+});
+
 

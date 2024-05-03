@@ -5,8 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-
-class PenggunasTableSeeder extends Seeder
+class MereksTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,12 +14,12 @@ class PenggunasTableSeeder extends Seeder
      */
     public function run()
     {
-        $penggunas = [
-            ['nama' => 'Alvin'],
-            ['nama' => 'Surya'],
-            ['nama' => 'Faiz'],
+        $mereks = [
+            ['nama_merek' => 'Honda'],
+            ['nama_merek' => 'Kawasaki'],
+            ['nama_merek' => 'Yamaha'],
         ];
         // masukkan data ke database
-        DB::table('penggunas')->insert($penggunas);
+        DB::table('mereks')->insert($mereks);
     }
 }
