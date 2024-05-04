@@ -8,6 +8,9 @@ use App\Models\Pengguna;
 use App\Models\Telepon;
 use App\Models\Merek;
 use App\Models\Produk;
+use App\Models\Pembeli;
+use App\Models\Barang2;
+use App\Models\Transaksi;
 
 /*
 |--------------------------------------------------------------------------
@@ -139,7 +142,6 @@ Route::get('/pengguna', function () {
     $data = Pengguna::all();
 
     return view('tampil_pengguna', compact('data'));
-    // return $barang;
 });
 
 //menampilkan data dari database
@@ -147,7 +149,6 @@ Route::get('/telepon', function () {
     $data = Telepon::all();
 
     return view('tampil_telepon', compact('data'));
-    // return $barang;
 });
 
 //menampilkan data dari database
@@ -155,7 +156,6 @@ Route::get('/merek', function () {
     $data = Merek::all();
 
     return view('tampil_merek', compact('data'));
-    // return $barang;
 });
 
 //menampilkan data dari database
@@ -163,7 +163,25 @@ Route::get('/produk', function () {
     $data = Produk::all();
 
     return view('tampil_produk', compact('data'));
-    // return $barang;
 });
 
+//menampilkan data dari database
+Route::get('/pembeli', function () {
+    $data = Pembeli::all();
 
+    return view('tampil_pembeli', compact('data'));
+});
+
+//menampilkan data dari database
+Route::get('/barang2', function () {
+    $data = Barang2::all();
+
+    return view('tampil_barang2', compact('data'));
+});
+
+//menampilkan data dari database
+Route::get('/transaksi', function () {
+    $data = Transaksi::all();
+
+    return view('tampil_transaksi', compact('data'));
+});
