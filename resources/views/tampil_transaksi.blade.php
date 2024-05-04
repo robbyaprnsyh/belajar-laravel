@@ -7,12 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <h2 align="center">Data Tabel Transaksi</h2>
     <table border="1" align="center">
         <tr>
             <th>No</th>
             <th>Id</th>
             <th>Nama Barang</th>
             <th>Nama Pembeli</th>
+            <th>Jenis Kelamin</th>
             <th>Jumlah</th>
             <th>Tanggal</th>
         </tr>
@@ -23,6 +25,7 @@
             <td>{{ $transaksi->id }}</td>
             <td>{{ $transaksi->barang->nama_barang }}</td>
             <td>{{ $transaksi->pembeli->nama_pembeli }}</td>
+            <td>{{ $transaksi->pembeli->jenis_kelamin }}</td>
             <td>{{ $transaksi->jumlah }}</td>
             <td>{{ $transaksi->tanggal }}</td>
         </tr>

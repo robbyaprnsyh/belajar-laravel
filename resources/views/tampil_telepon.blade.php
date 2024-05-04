@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h2 align="center">Data Tabel Telepon</h2>
     <table border="1" align="center">
         <tr>
             <th>No</th>
