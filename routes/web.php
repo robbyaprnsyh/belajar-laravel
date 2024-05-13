@@ -185,3 +185,10 @@ Route::get('/transaksi', function () {
 
     return view('tampil_transaksi', compact('data'));
 });
+
+//menampilkan data menjadi web
+Route::get('/template2', function () {
+    $data = Produk::all();
+
+    return view('template2', compact('data'));
+});
