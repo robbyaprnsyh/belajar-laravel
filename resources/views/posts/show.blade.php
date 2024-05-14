@@ -15,26 +15,20 @@
 {{-- CONTENT --}}
 <div class="section">
     <div class="container">
-        <div class="row mt-5">
-            <h2>List Artikel</h2>
+        <div class="row mt-5 justify-content-center">
+            <h2>Show Artikel</h2>
         </div>
         <div class="row mt-5">
-
-        @foreach ($data as $post )
-
             <div class="col">
                 <div class="card" style="width: 18rem;">
                 <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{$post->title}}</h5>
-                <p class="card-text">{{$post->content}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">{{ $data->title }}</h5>
+                <p class="card-text">{{ $data->content }}</p>
+                <a href="" class="btn btn-primary">Kembali</a>
             </div>
                 </div>
             </div>
-
-        @endforeach 
-
         </div>
     </div>
 </div>

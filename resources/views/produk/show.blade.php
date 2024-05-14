@@ -15,28 +15,22 @@
 {{-- CONTENT --}}
 <div class="section">
     <div class="container">
-        <div class="row mt-5">
-            <h2>List Produk</h2>
+        <div class="row mt-5 justify-content-center">
+            <h2>Show Produk</h2>
         </div>
-        <div class="row mt-2">
-
-        @foreach ($data as $produk )
-
-            <div class="col-4 mt-5">
+        <div class="row mt-5">
+            <div class="col">
                 <div class="card" style="width: 18rem;">
-                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="...">
+                <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{$produk->nama_produk}}</h5>
-                <p class="card-text">{{$produk->jumlah}}</p>
-                <p class="card-text">{{$produk->tanggal_produksi}}</p>
-                <p class="card-text">{{$produk->merek->nama_merek}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">{{ $data->nama_produk }}</h5>
+                <p class="card-text">{{ $data->jumlah }}</p>
+                <p class="card-text">{{ $data->tanggal_produksi }}</p>
+                <p class="card-text">{{ $data->merek->nama_merek }}</p>
+                <a href="" class="btn btn-primary">Kembali</a>
             </div>
                 </div>
             </div>
-
-        @endforeach 
-
         </div>
     </div>
 </div>

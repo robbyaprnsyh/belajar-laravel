@@ -11,6 +11,8 @@ use App\Models\Produk;
 use App\Models\Pembeli;
 use App\Models\Barang2;
 use App\Models\Transaksi;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -186,9 +188,10 @@ Route::get('/transaksi', function () {
     return view('tampil_transaksi', compact('data'));
 });
 
-//menampilkan data menjadi web
-Route::get('/template2', function () {
-    $data = Produk::all();
+//menampilkan data menjadi web menggunakan controller
+Route::get('/produk', [ProdukController::class, 'menampilkan']);
+Route::get('/produk/{id}', [ProdukController::class, 'show']);
 
-    return view('template2', compact('data'));
-});
+//menampilkan data menjadi web menggunakan controller
+Route::get('/post', [PostController::class, 'menampilkan']);
+Route::get('/post/{id}', [PostController::class, 'show']);
