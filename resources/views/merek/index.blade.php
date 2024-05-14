@@ -19,22 +19,24 @@
     <div class="section">
         <div class="container">
             <div class="row mt-5 justify-content-center">
-                <h2>Show Produk</h2>
+                <h2>List Merek</h2>
             </div>
             <div class="row mt-5">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $data->nama_produk }}</h5>
-                            <p class="card-text">{{ $data->jumlah }}</p>
-                            <p class="card-text">{{ $data->tanggal_produksi }}</p>
-                            <p class="card-text">{{ $data->merek->nama_merek }}</p>
-                            <a href="" class="btn btn-primary">Kembali</a>
+
+                @foreach ($data as $merek)
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://kobayogas.files.wordpress.com/2013/10/logo-motor.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body bg-light" align="center">
+                                <h5 class="card-title">{{ $merek->nama_merek }}</h5>
+                                <p class="card-text"></p>
+                                <a href="merek/{{ $merek->id }}" class="btn btn-primary">Lihat Detail</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>

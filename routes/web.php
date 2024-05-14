@@ -1,18 +1,19 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Models\Post;
-use App\Models\Barang;
-use App\Models\Siswa;
-use App\Models\Pengguna;
-use App\Models\Telepon;
-use App\Models\Merek;
-use App\Models\Produk;
-use App\Models\Pembeli;
-use App\Models\Barang2;
-use App\Models\Transaksi;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\MerekController;
+use App\Models\Barang2;
+use App\Models\Barang;
+use App\Models\Merek;
+use App\Models\Pembeli;
+use App\Models\Pengguna;
+use App\Models\Post;
+use App\Models\Produk;
+use App\Models\Siswa;
+use App\Models\Telepon;
+use App\Models\Transaksi;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ use App\Http\Controllers\ProdukController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -67,13 +68,13 @@ Route::get('product/{name}', function ($name) {
 //route parameter
 Route::get('biodata/{nama}/{bb}/{tb}', function ($nama, $bb, $tb) {
     $bmi = $bb / (($tb / 100) ** 2);
-    if($bmi > 30){
+    if ($bmi > 30) {
         $ket = "Obesitas";
-    } else if($bmi > 25){
+    } else if ($bmi > 25) {
         $ket = "Kelebihan";
-    } else if($bmi > 18.5){
+    } else if ($bmi > 18.5) {
         $ket = "Ideal";
-    } else if($bmi < 18.5){
+    } else if ($bmi < 18.5) {
         $ket = "Kekurangan berat badan";
     }
 
@@ -88,7 +89,6 @@ Route::get('biodata/{nama}/{bb}/{tb}', function ($nama, $bb, $tb) {
 Route::get('myname/{nama?}', function ($nama = "Abdu") {
     return "my name is $nama";
 });
-
 
 //menampilkan data dari database
 Route::get('/testpost', function () {
@@ -195,3 +195,7 @@ Route::get('/produk/{id}', [ProdukController::class, 'show']);
 //menampilkan data menjadi web menggunakan controller
 Route::get('/post', [PostController::class, 'menampilkan']);
 Route::get('/post/{id}', [PostController::class, 'show']);
+
+//menampilkan data menjadi web menggunakan controller
+Route::get('/merek', [MerekController::class, 'menampilkan']);
+Route::get('/merek/{id}', [MerekController::class, 'show']);

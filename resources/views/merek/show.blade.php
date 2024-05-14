@@ -19,18 +19,16 @@
     <div class="section">
         <div class="container">
             <div class="row mt-5 justify-content-center">
-                <h2>Show Produk</h2>
+                <h2>Show Merek</h2>
             </div>
             <div class="row mt-5">
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="https://images.pexels.com/photos/2393821/pexels-photo-2393821.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        <img src="https://kobayogas.files.wordpress.com/2013/10/logo-motor.jpg"
                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $data->nama_produk }}</h5>
-                            <p class="card-text">{{ $data->jumlah }}</p>
-                            <p class="card-text">{{ $data->tanggal_produksi }}</p>
-                            <p class="card-text">{{ $data->merek->nama_merek }}</p>
+                        <div class="card-body bg-light">
+                            <h5 class="card-title">{{ $data->id }}</h5>
+                            <p class="card-text">{{ $data->nama_merek }}</p>
                             <a href="" class="btn btn-primary">Kembali</a>
                         </div>
                     </div>
