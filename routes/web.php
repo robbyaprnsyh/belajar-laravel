@@ -51,7 +51,7 @@ Route::get('/vegetables', function () {
 });
 
 //route parameter
-Route::get('product/{name}', function ($name) {
+Route::get('products/{name}', function ($name) {
     return "produk: $name";
 });
 
@@ -190,10 +190,14 @@ Route::get('/post/{id}', [PostController::class, 'show']);
 Route::get('/merek', [MerekController::class, 'menampilkan']);
 Route::get('/merek/{id}', [MerekController::class, 'show']);
 
+// Route Auth
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Crud Brand
 use App\Http\Controllers\BrandController;
 Route::resource('brand', BrandController::class);
+
+// Crud Product
+use App\Http\Controllers\ProductController;
+Route::resource('product', ProductController::class);
